@@ -1,0 +1,4 @@
+Строка: The quick brown fox jumps over the lazy dog
+Подстрока: quick brown 
+Начало удаленной подстроки: 4
+Новая строка: The fox jumps over the lazy dog

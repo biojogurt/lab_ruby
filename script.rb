@@ -1,12 +1,20 @@
+def printToConsoleAndFile(file, text)
+    file.puts(text)
+    puts(text)
+end
+
 string = "The quick brown fox jumps over the lazy dog"
 substring = "quick brown "
 
-puts("Строка: " + string)
-puts("Подстрока: " + substring)
+filename = "result.txt"
 
-substringIndex = string.index(substring)
-result = string.sub(substring, "")
+File.open(filename, "w") { |f|
+    printToConsoleAndFile(f, "Строка: " + string)
+    printToConsoleAndFile(f, "Подстрока: " + substring)
 
-puts("Начало удаленной подстроки: " + substringIndex.to_s)
-puts("Новая строка: " + result)
-gets #чтобы консоль не закрывалась после выполнения
+    substringIndex = string.index(substring)
+    result = string.sub(substring, "")
+
+    printToConsoleAndFile(f, "Начало удаленной подстроки: " + substringIndex.to_s)
+    printToConsoleAndFile(f, "Новая строка: " + result)
+}
